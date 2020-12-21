@@ -3,13 +3,14 @@ package main
 import (
 	"flag"
 	"fmt"
+	"log"
 	"math/rand"
 	"os"
 	"time"
 )
 
 var letters58 = []rune("123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz")
-var letters58_lower = []rune("123456789abcdefghijkmnopqrstuvwxyz")
+var letters58Lower = []rune("123456789abcdefghijkmnopqrstuvwxyz")
 
 func randSeq(n int, letters []rune) string {
 	if n < 0 {
@@ -37,11 +38,14 @@ func main() {
 		os.Exit(0)
 	}
 
-	mySet.Parse(os.Args[2:])
+	err := mySet.Parse(os.Args[2:])
+	if err != nil {
+		log.Fatalf("Invalid number of arguments")
+	}
 
 	switch os.Args[1] {
 	case "id58": fmt.Println(randSeq(numb, letters58))
-	case "id58l": fmt.Println(randSeq(numb, letters58_lower))
+	case "id58l": fmt.Println(randSeq(numb, letters58Lower))
 	}
 
 }
