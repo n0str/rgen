@@ -47,7 +47,7 @@ Installation
 go get github.com/n0str/rgen
 ```
 
-You can also download release files from [GitHub](https://github.com/n0str/rgen/releases/tag/1.1)
+You can also download release files from [GitHub](https://github.com/n0str/rgen/releases/tag/v1.1)
 
 Build
 -----
