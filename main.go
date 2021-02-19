@@ -11,6 +11,7 @@ import (
 
 var letters58 = []rune("123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz")
 var letters58Lower = []rune("123456789abcdefghijkmnopqrstuvwxyz")
+var letters58Upper = []rune("123456789ABCDEFGHJKLMNPQRSTUVWXYZ")
 
 func randSeq(n int, letters []rune) string {
 	if n < 0 {
@@ -32,7 +33,7 @@ func main() {
 	mySet.IntVar(&numb,"n",10,"how many symbols to generate")
 
 	if len(os.Args) < 2 {
-		fmt.Fprintf(os.Stderr, "Usage: %s: <command> <arguments>\nCommands: id58, id58l\nArguments:\n", os.Args[0])
+		fmt.Fprintf(os.Stderr, "Usage: %s: <command> <arguments>\nCommands: id58, id58l, id58u\nArguments:\n", os.Args[0])
 
 		mySet.PrintDefaults()
 		os.Exit(0)
@@ -46,6 +47,7 @@ func main() {
 	switch os.Args[1] {
 	case "id58": fmt.Println(randSeq(numb, letters58))
 	case "id58l": fmt.Println(randSeq(numb, letters58Lower))
+	case "id58u": fmt.Println(randSeq(numb, letters58Upper))
 	}
 
 }
