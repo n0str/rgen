@@ -13,7 +13,7 @@ Run binary file with the following arguments
 
 ```
 Usage: ./rgen: <command> <arguments>
-Commands: id58, id58l, id58u
+Commands: id58, id58l, id58u, id92
 Arguments:
   -n int
         how many symbols to generate (default 10)
@@ -45,6 +45,13 @@ Sample output of `for i in {1..3}; do ./rgen id58u -n 31; done`
 2R5TG33TABP9KDLAQ4AY7DZ3EZ4SE85
 6NCQNEMNPBMEGW8CBVDKHEQC13V6SJT
 JRVM1XC7QTGKSFHH3EALRSYPQQF8MD9
+```
+
+Sample output of `for i in {1..3}; do ./rgen id92 -n 9; done`
+```
+Ke!.rBp2y
+R\3s:ynf[
+ga8Ue7[w
 ```
 
 Installation
