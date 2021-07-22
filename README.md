@@ -17,6 +17,10 @@ Commands: id58, id58l, id58u, id92
 Arguments:
   -n int
         how many symbols to generate (default 10)
+Command: name
+Arguments:
+  -n int
+    	how many words to generate (default 4)
 ```
 
 Output
