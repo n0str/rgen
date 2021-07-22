@@ -54,6 +54,13 @@ R\3s:ynf[
 ga8Ue7[w
 ```
 
+Sample output of `for i in {1..3}; do ./rgen name -n 5; done`
+```
+thiller-matinal-kecked-spaned-slept
+torched-hamba-gaijin-delve-fact
+kutch-cubebs-mineral-acting-ridgy
+```
+
 Installation
 -----
 
@@ -66,12 +73,25 @@ You can also download release files from [GitHub](https://github.com/n0str/rgen/
 Build
 -----
 
-Clone the repository, compile binary for linux or macos and run.
+Clone the repository, compile binary for linux, macos or windows and run.
 
 ```
 git clone https://github.com/n0str/rgen
 cd rgen
 GOOS=linux go build -o rgen-linux .
+```
+
+Or you can compile binary for linux, macos or windows with docker.
+
+```
+git clone https://github.com/n0str/rgen
+cd rgen
+docker-compose run --rm rgen make build-linux
+```
+And binary file will be in directory "build".
+
+```
+cd build
 ```
 
 Now you can run the binary file `rgen-linux`
