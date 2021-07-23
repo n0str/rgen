@@ -9,6 +9,8 @@ import (
 	"time"
 )
 
+var Version string
+
 var letters58 = []rune("123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz")
 var letters58Lower = []rune("123456789abcdefghijkmnopqrstuvwxyz")
 var letters58Upper = []rune("123456789ABCDEFGHJKLMNPQRSTUVWXYZ")
@@ -54,11 +56,18 @@ func main() {
 	var numb int
 	var col int
 	
-	
+	v := flag.Bool("v", false, "")
+	version := flag.Bool("-version", false, "")
+	version1 := flag.Bool("version", false, "prints current version")
+	flag.Parse()
 	nameSet := flag.NewFlagSet("word",flag.ExitOnError)
 	mySet := flag.NewFlagSet("",flag.ExitOnError)
 	nameSet.IntVar(&col,"n", 4, "how many words to generate")
 	mySet.IntVar(&numb,"n",10,"how many symbols to generate")
+	if *v || *version || *version1 {
+          fmt.Println("Version: "+Version)
+          os.Exit(0)
+        }
 
 	if len(os.Args) < 2 {
 		fmt.Fprintf(os.Stderr, "Usage: %s: <command> <arguments>\nCommands: id58, id58l, id58u, id92\nArguments:\n", os.Args[0])
