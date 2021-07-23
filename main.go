@@ -55,7 +55,7 @@ func main() {
 	var col int
 	
 	
-	nameSet := flag.NewFlagSet("name",flag.ExitOnError)
+	nameSet := flag.NewFlagSet("word",flag.ExitOnError)
 	mySet := flag.NewFlagSet("",flag.ExitOnError)
 	nameSet.IntVar(&col,"n", 4, "how many words to generate")
 	mySet.IntVar(&numb,"n",10,"how many symbols to generate")
@@ -64,12 +64,12 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Usage: %s: <command> <arguments>\nCommands: id58, id58l, id58u, id92\nArguments:\n", os.Args[0])
 
 		mySet.PrintDefaults()
-		fmt.Fprintf(os.Stderr, "Command: name\nArguments:\n")
+		fmt.Fprintf(os.Stderr, "Command: word\nArguments:\n")
 		nameSet.PrintDefaults()
 		os.Exit(0)
 	}
 	
-	if (os.Args[1] == "name") {
+	if (os.Args[1] == "word") {
 		err := nameSet.Parse(os.Args[2:])
 			if err != nil {
 		log.Fatalf("Invalid number of arguments")

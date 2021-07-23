@@ -17,7 +17,7 @@ Commands: id58, id58l, id58u, id92
 Arguments:
   -n int
         how many symbols to generate (default 10)
-Command: name
+Command: word
 Arguments:
   -n int
     	how many words to generate (default 4)
@@ -58,7 +58,7 @@ R\3s:ynf[
 ga8Ue7[w
 ```
 
-Sample output of `for i in {1..3}; do ./rgen name -n 5; done`
+Sample output of `for i in {1..3}; do ./rgen word -n 5; done`
 ```
 thiller-matinal-kecked-spaned-slept
 torched-hamba-gaijin-delve-fact
