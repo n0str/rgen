@@ -33,7 +33,7 @@ build-linux:
 	GOOS=linux GOARCH=amd64 go build -o ./build/$(BINARY_NAME_LINUX) $(GOFLAGS) -v ./
 
 build-darwin:
-	GOOS=darwin GOARCH=amd64 go build -o ./build/$(BINARY_NAME_DARWIN) -v ./
+	GOOS=darwin GOARCH=amd64 go build -o ./build/$(BINARY_NAME_DARWIN) $(GOFLAGS) -v ./
 	
 build-windows:
-	GOOS=windows GOARCH=amd64 go build -o ./build/$(BINARY_NAME_WINDOWS) -v ./
+	GOOS=windows GOARCH=amd64 go build -o ./build/$(BINARY_NAME_WINDOWS) $(GOFLAGS) -v ./
