@@ -13,7 +13,7 @@ Run binary file with the following arguments
 
 ```
 Usage: ./rgen: <command> <arguments>
-Commands: id58, id58l, id58u, id92
+Commands: id58, id58l, id58u, id92, idsafe, idsafel, idsafeu
 Arguments:
   -n int
         how many symbols to generate (default 10)
@@ -56,6 +56,37 @@ Sample output of `for i in {1..3}; do ./rgen id92 -n 9; done`
 Ke!.rBp2y
 R\3s:ynf[
 ga8Ue7[w
+```
+
+`idsafe`, `idsafel` and `idsafeu` generate strings that are easy to retype from a screen.
+They never contain `0 O o Q`, `1 I l`, `2 Z z`, `5 S s`, `8 B`, `g q`, `u v V` and `r` (`rn` looks like `m`).
+`idsafe` also skips letters whose cases differ only in size (`C c`, `K k`, `P p`, `U u`, `W w`, `X x`, `Y y`).
+
+| Command   | Alphabet                       | Size |
+|-----------|--------------------------------|------|
+| `idsafe`  | `34679ADEFGHJLMNRTabdefhijmnt` | 28   |
+| `idsafel` | `34679abcdefhijkmnptwxy`       | 22   |
+| `idsafeu` | `34679ACDEFGHJKLMNPRTUWXY`     | 24   |
+
+Sample output of `for i in {1..3}; do ./rgen idsafe -n 12; done`
+```
+mNDnDi6ThEnJ
+6n6aTn4jHNRj
+fHbHa3aEd44b
+```
+
+Sample output of `for i in {1..3}; do ./rgen idsafel -n 12; done`
+```
+c4hfp3aiiyek
+j9ai6tfjcd6m
+k7p4w7ybcc6f
+```
+
+Sample output of `for i in {1..3}; do ./rgen idsafeu -n 12; done`
+```
+HWY3YULMFKG6
+MFDC6JDXNW7T
+6U34CFDCHELL
 ```
 
 Sample output of `for i in {1..3}; do ./rgen word -n 5; done`
